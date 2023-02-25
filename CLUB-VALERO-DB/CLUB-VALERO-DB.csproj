@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{827F6A59-EC09-4DE6-96A2-3B788532A9F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CLUB_VALERO_DB</RootNamespace>
+    <AssemblyName>CLUB-VALERO-DB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\AdminBLL.cs" />
+    <Compile Include="BL\BulkData.cs" />
+    <Compile Include="BL\LoginBL.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DbContext-DB\DBContextClub.cs" />
+    <Compile Include="Entities\Asia.cs" />
+    <Compile Include="Entities\AsiaFullCityName.cs" />
+    <Compile Include="Entities\Booking.cs" />
+    <Compile Include="Entities\ContactUs.cs" />
+    <Compile Include="Entities\IndianCity.cs" />
+    <Compile Include="Entities\IndianFullCityPage.cs" />
+    <Compile Include="Entities\Login.cs" />
+    <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\PaymentOrder.cs" />
+    <Compile Include="Entities\Remark.cs" />
+    <Compile Include="Entities\RoleMaster.cs" />
+    <Compile Include="Entities\Test.cs" />
+    <Compile Include="Entities\UserAmc.cs" />
+    <Compile Include="Entities\UserEmi.cs" />
+    <Compile Include="Entities\UtilityPayment.cs" />
+    <Compile Include="Migrations\202207211110273_A.cs" />
+    <Compile Include="Migrations\202207211110273_A.Designer.cs">
+      <DependentUpon>202207211110273_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207211119304_A1.cs" />
+    <Compile Include="Migrations\202207211119304_A1.Designer.cs">
+      <DependentUpon>202207211119304_A1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207211121360_A2.cs" />
+    <Compile Include="Migrations\202207211121360_A2.Designer.cs">
+      <DependentUpon>202207211121360_A2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207211143008_A4.cs" />
+    <Compile Include="Migrations\202207211143008_A4.Designer.cs">
+      <DependentUpon>202207211143008_A4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207211155382_A5.cs" />
+    <Compile Include="Migrations\202207211155382_A5.Designer.cs">
+      <DependentUpon>202207211155382_A5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207221038430_A6.cs" />
+    <Compile Include="Migrations\202207221038430_A6.Designer.cs">
+      <DependentUpon>202207221038430_A6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207221105006_A7.cs" />
+    <Compile Include="Migrations\202207221105006_A7.Designer.cs">
+      <DependentUpon>202207221105006_A7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207271235221_k1.cs" />
+    <Compile Include="Migrations\202207271235221_k1.Designer.cs">
+      <DependentUpon>202207271235221_k1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208100449473_w.cs" />
+    <Compile Include="Migrations\202208100449473_w.Designer.cs">
+      <DependentUpon>202208100449473_w.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209010915035_h1.cs" />
+    <Compile Include="Migrations\202209010915035_h1.Designer.cs">
+      <DependentUpon>202209010915035_h1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209281121478_z1.cs" />
+    <Compile Include="Migrations\202209281121478_z1.Designer.cs">
+      <DependentUpon>202209281121478_z1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Emailmsg.cs" />
+    <Compile Include="Utilities\GenerateId.cs" />
+    <Compile Include="Utilities\Mobilesms.cs" />
+    <Compile Include="Utilities\MyRole.cs" />
+    <Compile Include="ViewModel\AsiaModel.cs" />
+    <Compile Include="ViewModel\BookingModel.cs" />
+    <Compile Include="ViewModel\ContactUsModel.cs" />
+    <Compile Include="ViewModel\FileUpload.cs" />
+    <Compile Include="ViewModel\IndianCityMultipleModel.cs" />
+    <Compile Include="ViewModel\IndianFullCityPageModel.cs" />
+    <Compile Include="ViewModel\LoginModel.cs" />
+    <Compile Include="ViewModel\MemberViewModel.cs" />
+    <Compile Include="ViewModel\PaymentInitiateModel.cs" />
+    <Compile Include="ViewModel\PaymentOrderModel.cs" />
+    <Compile Include="ViewModel\RemarkModel.cs" />
+    <Compile Include="ViewModel\UtilityPaymentModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202207211110273_A.resx">
+      <DependentUpon>202207211110273_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207211119304_A1.resx">
+      <DependentUpon>202207211119304_A1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207211121360_A2.resx">
+      <DependentUpon>202207211121360_A2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207211143008_A4.resx">
+      <DependentUpon>202207211143008_A4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207211155382_A5.resx">
+      <DependentUpon>202207211155382_A5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207221038430_A6.resx">
+      <DependentUpon>202207221038430_A6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207221105006_A7.resx">
+      <DependentUpon>202207221105006_A7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207271235221_k1.resx">
+      <DependentUpon>202207271235221_k1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208100449473_w.resx">
+      <DependentUpon>202208100449473_w.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209010915035_h1.resx">
+      <DependentUpon>202209010915035_h1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209281121478_z1.resx">
+      <DependentUpon>202209281121478_z1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

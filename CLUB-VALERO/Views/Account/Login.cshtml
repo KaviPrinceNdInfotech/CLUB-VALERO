@@ -1,0 +1,108 @@
+﻿@model CLUB_VALERO_DB.ViewModel.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Login</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- site icon -->
+    <link rel="icon" href="~/Lib/images/fevicon.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/Lib/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="~/Lib/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/Lib/css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="~/Lib/css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="~/Lib/css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="~/Lib/css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/Lib/css/custom.css" />
+    <!-- calendar file css -->
+    <link rel="stylesheet" href="~/Lib/js/semantic.min.css" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="inner_page login">
+    <div class="full_container">
+        <div class="container">
+            <div class="center verticle_center full_height">
+                <div class="login_section">
+                    <div class="logo_login">
+                        <div class="center">
+                            @*<img width="210" src="~/Lib/images/logo/clubvaleroLogo.png" alt="#" />*@
+                            <h4 class="text-white font-italic">CLUB VALERO</h4>
+                        </div>
+
+                    </div>
+                  
+                    <div class="login_form">
+                        @if (@TempData["MSG"] != null)
+                        {
+                            <div class="bg-danger text-center text-white">
+                             @TempData["MSG"]
+                            </div>
+
+                        }
+                        <form action="/Account/Login" method="post">
+                            <fieldset>
+
+
+                                <div class="field">
+                                    <label class="label_field">UserName</label>
+                                    <input type="text" name="UserName" placeholder="User Name" autocomplete="off"/>
+                                </div>
+                                <div class="field">
+                                    <label class="label_field">Password</label>
+                                    <input type="password" name="password" placeholder="Password" autocomplete="off"/>
+                                </div>
+                                <div class="field">
+                                    <label class="label_field hidden">hidden label</label>
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input"> Remember Me</label>
+                                    <a class="forgot" href="">Forgot Password?</a>
+                                </div>
+                                <div class="field margin_0">
+                                    <label class="label_field hidden">hidden label</label>
+                                    <button class="main_bt">Sign In</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Lib/js/jquery.min.js"></script>
+    <script src="~/Lib/js/popper.min.js"></script>
+    <script src="~/Lib/js/bootstrap.min.js"></script>
+    <!-- wow animation -->
+    <script src="~/Lib/js/animate.js"></script>
+    <!-- select country -->
+    <script src="~/Lib/js/bootstrap-select.js"></script>
+    <!-- nice scrollbar -->
+    <script src="~/Lib/js/perfect-scrollbar.min.js"></script>
+    <script>var ps = new PerfectScrollbar('#sidebar');</script>
+    <!-- custom js -->
+    <script src="~/Lib/js/custom.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CLUB_VALERO_DB.Entities.IndianCity>
+
+@{
+    ViewBag.Title = "IndianListCity";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="font-italic pt-4">IndianListCity</h2>
+
+
+<table class="table table-hover table-responsive-md mt-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+          
+            @Html.ActionLink("Delete", "IndianListDelete", new { id=item.Id },new { @class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

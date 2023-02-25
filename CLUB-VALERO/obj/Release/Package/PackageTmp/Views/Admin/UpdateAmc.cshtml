@@ -1,0 +1,84 @@
+﻿@model CLUB_VALERO_DB.Entities.Member
+
+@{
+    ViewBag.Title = "UpdateAmc";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("select").click(function () {
+            var Tdate = $("#Tenure").val();
+
+            var d = new Date();
+            var strDate1 = (d.getDate()) + "-" + (d.getMonth() + 1) + "-" + (d.getFullYear() + parseInt(Tdate));
+            $("#TenureDate").val(strDate1);
+
+        })
+    })
+</script>
+
+<h2 class="text-warning mt-5">UpdateAmc</h2>
+           @if(TempData["UpdateAmc"]!=null)
+            {
+                <div class="alert alert-success">
+                    <span>@TempData["UpdateAmc"]</span>
+                </div>
+            }
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row mt-5 bg-white">
+        <div class="col-md-3">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Tenure, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Tenure, new List<SelectListItem>()
+               {
+                   new SelectListItem(){Text="1",Value="1"},
+                   new SelectListItem(){Text="2",Value="2"},
+                   new SelectListItem(){Text="3",Value="3"},
+                   new SelectListItem(){Text="5",Value="5"},
+                   new SelectListItem(){Text="10",Value="10"},
+                   new SelectListItem(){Text="25",Value="25"}
+               }, "----Tenure----", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Tenure, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="pl-3">Tenure Date</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.TenureDate, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(model => model.AmcCharge, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.AmcCharge, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="text" name="AmcCharge" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.AmcCharge, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-3">
+            <div class="col-md-offset-2 col-md-12">
+                <input type="submit" value="Update-Amc" class="btn btn-block btn-primary" />
+            </div>
+        </div>
+    </div>
+
+}
+
