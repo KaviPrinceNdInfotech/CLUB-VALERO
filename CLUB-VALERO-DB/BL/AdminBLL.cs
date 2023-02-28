@@ -661,7 +661,9 @@ namespace CLUB_VALERO_DB.BL
                 {
                     Name=model.Name,
                     MobileNo=model.MobileNo,
-                    Profission=model.Profission,
+                    Email = model.Email,
+                    Time = model.Time,
+                    //Profission =model.Profission,
                     Address=model.Address
                 };
                 _context.messages.Add(emp);

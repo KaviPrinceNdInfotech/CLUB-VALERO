@@ -14,8 +14,12 @@ namespace CLUB_VALERO_DB.Entities
 
         public string Name { get; set; }
         public string MobileNo { get; set; }
+
+        public string Email { get; set; }
         public string Address { get; set; }
-        public string Profission { get; set; }
+         public string Time { get; set; }
+        //public string Profission { get; set; }
+
 
     }
 }
