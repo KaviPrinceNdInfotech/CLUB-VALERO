@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CLUB_VALERO_DB.Entities.Remark>
+
+@{
+    ViewBag.Title = "ListRemark";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-warning mt-3">Remark List</h2>
+
+
+<table class="table table-hover table-bordered mt-3">
+    <tr class="bg-info text-white">
+       
+        <th>
+           Remark
+        </th>
+        <th>
+           Date
+        </th>       
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>       
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateRemark)
+        </td>
+        <td>
+           @item.CurrentDate.ToString("dd-MM-yyyy")
+        </td>
+     
+        <td>
+            <a href="/Admin/EditRemark?id=@item.Id"><i class="fa fa-edit text-primary" style="font-size: 30px;"></i></a>
+          <a href="/Admin/DeleteRemark?id=@item.Id"><i class="fa fa-trash text-danger" style="font-size: 30px;"></i></a>          
+        </td>
+    </tr>
+}
+
+</table>

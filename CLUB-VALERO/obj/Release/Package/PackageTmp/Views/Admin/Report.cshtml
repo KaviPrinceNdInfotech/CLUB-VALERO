@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CLUB_VALERO_DB.Entities.Member>
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <input id="myInput" type="text" class="form-control" placeholder="Search.." style="margin-top: 21px;">
+    </div>
+    <div class="col-md-4">
+        <form action="/Admin/ReportToExcel" method="post">
+            <button type="submit" class="btn btn-success mt-4">Export To Excel</button>
+        </form>
+    </div>
+</div>
+
+<table class="table  table-hover table-bordered table-responsive" style="margin-top:6px;">
+    <thead>
+        <tr class="bg-info text-white">
+            <th>SrNo</th>
+            <th>Member Name</th>
+            <th>MemberShip No</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Initial Payment</th>
+            <th>Recieved Amt</th>
+            <th>Balance</th>
+            <th>Tenure</th>
+            <th>Emi Amt</th>
+            <th>Amc Amt</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody id="myTable">
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.M_FirstName</td>
+                <td>@item.MemberShipNo</td>
+                <td>@item.Mobile</td>
+                <td>@item.Email</td>
+                <td>@item.City</td>
+                <td>@item.BalanceAmount</td>
+                <td>@item.DownPayment</td>
+                <td>@item.BalanceAmount</td>
+                <td>@item.Tenure</td>
+                <td>@item.EmiAmount</td>
+                <td>@item.AmcCharge</td>
+            </tr>
+        </tbody>
+    }
+</table>
+

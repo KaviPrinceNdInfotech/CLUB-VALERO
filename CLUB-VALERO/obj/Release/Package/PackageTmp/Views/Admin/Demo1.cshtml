@@ -1,0 +1,472 @@
+﻿@model IEnumerable<CLUB_VALERO_DB.Entities.Member>
+
+@{
+    ViewBag.Title = "Demo1";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Demo1</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberShipId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_Salution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnnualIncome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodPreference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Salution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_Co_Adults)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_Co_Children)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Child1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Child1_DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Child2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Child2_DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Child3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_Child3_DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfPremission_Building)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Road_Street_Lane)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Locality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApptType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOf_Night_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateByDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupants)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberShipType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmcCharge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClubValeroMemebr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberShipNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberShip_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DownPayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BalanceAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DownPaymentOpted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModeOfPayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CashDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CashAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CashReceiptNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CashSignature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DD_BankName_Branch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DD_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DD_InstrumentNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Debit_Credit_Card)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMIOpted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmiAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emi_BankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emi_InstrumentNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emi_Plan_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Individual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Co_applicant_kyc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClubValero_Executive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CVE_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KYC_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberShipId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_Salution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaritalStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnnualIncome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodPreference)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Salution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No_Co_Adults)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No_Co_Children)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Child1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Child1_DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Child2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Child2_DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Child3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_Child3_DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfPremission_Building)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Road_Street_Lane)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Locality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandMark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApptType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOf_Night_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateByDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupants)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberShipType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmcCharge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClubValeroMemebr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberShipNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberShip_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DownPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BalanceAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DownPaymentOpted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModeOfPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CashDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CashAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CashReceiptNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CashSignature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DD_BankName_Branch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DD_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DD_InstrumentNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Debit_Credit_Card)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMIOpted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmiAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emi_BankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emi_InstrumentNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emi_Plan_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Individual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Co_applicant_kyc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClubValero_Executive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CVE_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KYC_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
