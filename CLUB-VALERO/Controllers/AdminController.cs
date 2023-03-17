@@ -308,7 +308,10 @@ namespace CLUB_VALERO.Controllers
         {
             return View(obj.Members.ToList());
         }
-       
+        public ActionResult AmPaymentList(int id)
+        {
+            return View(obj.UserAmcs.Where(x => x.UserId == id).ToList());
+        }
         public ActionResult DeleteAmcList(int id)
         {
             try
@@ -423,14 +426,19 @@ namespace CLUB_VALERO.Controllers
             ViewBag.pincode= data.PinCode;
             return View(result);
         }
-       
+        [HttpGet]
+        public ActionResult UserAmcPayment(int id)
+        {
+            var result = obj.UserAmcs.FirstOrDefault(x => x.Id == id);
+            return View(result);
+        }
         [HttpPost]
         public ActionResult UserAmcPayment(UserAmc model)
         {
             try
             {
                 bool isvalid = Adbll.AmcPayment(model);
-                if(isvalid)
+                if (isvalid)
                 {
                     TempData["msg"] = "Amc Payment SuccessFully";
                     ModelState.Clear();
@@ -443,13 +451,15 @@ namespace CLUB_VALERO.Controllers
                 {
                     TempData["msg"] = "Amc Payment Not SuccessFully";
                 }
+                return View();
             }
             catch
             {
                 throw new Exception("Server Error");
             }
-            return View();
         }
+
+        
         public ActionResult UserEmiPayment(int id)
         {
             var result = obj.UserEmis.FirstOrDefault(x => x.Id == id);
@@ -825,10 +835,39 @@ namespace CLUB_VALERO.Controllers
         {
             return View();
         }
-       
+
+        [HttpGet]
+        public ActionResult HotelBooking()
+        {
+            ViewBag.MemberShip = new SelectList(obj.Members, "Id", "MemberShipId").ToList();
+            return View();
+        }
+        [HttpPost]
+        public ActionResult HotelBooking(BookingModel model)
+        {
+            try
+            {
+                ViewBag.MemberShip = new SelectList(obj.Members, "Id", "MemberShipId").ToList();
+                bool isvalid = Adbll.HotelBooking(model);
+                if (isvalid)
+                {
+                    TempData["msg"] = "Hotel Name Add SuccessFully";
+                    ModelState.Clear();
+                    return View();
+                }
+                else
+                {
+                    TempData["msg"] = "Hotel Name Add Not SuccessFully";
+                }
+            }
+            catch
+            {
+                TempData["msg"] = "Server Error";
+            }
+            return View();
+        }
 
 
-        
-        
+
     }
 }

@@ -44,5 +44,7 @@ namespace CLUB_VALERO_DB.DbContext_DB
         public DbSet<Message> messages { get; set; }
 
         public DbSet<Remark> remarks { get; set; }
+
+        public System.Data.Entity.DbSet<CLUB_VALERO_DB.ViewModel.BookingModel> BookingModels { get; set; }
     }
 }

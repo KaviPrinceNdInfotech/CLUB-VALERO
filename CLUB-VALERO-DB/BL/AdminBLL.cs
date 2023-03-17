@@ -615,7 +615,7 @@ namespace CLUB_VALERO_DB.BL
                 return false;
             }
         }
-    
+        
         public bool UpdateBooking(Booking model)
         {
             try

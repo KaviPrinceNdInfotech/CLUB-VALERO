@@ -38,10 +38,8 @@
                     <label class="control-label pl-3">Member Id</label>
                     <div class="col-md-10">
 
-                        @Html.DropDownListFor(model => model.UserId, ViewBag.MemberShipId as IEnumerable<SelectListItem>, "--------Member Id-------", new { @class = "form-control" })
-
-
-                        @*@Html.TextBoxFor(model => model.UserId, "", new { @class = "form-control"})*@
+                         @Html.DropDownListFor(model => model.UserId, ViewBag.MemberShip as IEnumerable<SelectListItem>, "--------Member Id-------", new { @class = "form-control" })
+                        @* @Html.TextBoxFor(model => model.UserId, "", new { @class = "form-control"})*@
 
                         @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
                     </div>

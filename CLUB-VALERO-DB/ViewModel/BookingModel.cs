@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace CLUB_VALERO_DB.ViewModel
 {
@@ -13,7 +15,6 @@ namespace CLUB_VALERO_DB.ViewModel
         public int UserId { get; set; }
         public string CheckOut { get; set; }
         public string CheckIn { get; set; }
-
         public string Nights { get; set; }
         public string Days { get; set; }
         public string City { get; set; }
@@ -30,5 +31,8 @@ namespace CLUB_VALERO_DB.ViewModel
         public string HolidayType { get; set; }
         public string MealPlan { get; set; }
         public string NoOfAdult { get; set; }
+
+        
+
     }
 }
