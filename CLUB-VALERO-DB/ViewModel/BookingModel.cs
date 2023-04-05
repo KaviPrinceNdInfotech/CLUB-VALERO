@@ -31,8 +31,8 @@ namespace CLUB_VALERO_DB.ViewModel
         public string HolidayType { get; set; }
         public string MealPlan { get; set; }
         public string NoOfAdult { get; set; }
+        public string Noofnights { get; set; }
 
-        
 
     }
 }

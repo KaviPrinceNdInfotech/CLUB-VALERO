@@ -282,6 +282,7 @@ namespace CLUB_VALERO_DB.BL
                     result.Status = "paid";
                     result.PaymentMode = model.PaymentMode;
                     result.AmcDepositDate = DateTime.Now;
+                    result.remarks = model.remarks;
                 }
                 _context.SaveChanges();
                 return true;
@@ -600,6 +601,7 @@ namespace CLUB_VALERO_DB.BL
                     TelephoneNo=model.TelephoneNo,
                     ConfirmationId=model.ConfirmationId,
                     RoomType=model.RoomType,
+                    Remarks=model.Remarks,
                     ConfirmedBy=model.ConfirmedBy,
                     NoOfRooms=model.NoOfRooms,
                     NoOfKids=model.NoOfKids,

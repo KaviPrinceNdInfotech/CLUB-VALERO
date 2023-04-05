@@ -163,6 +163,7 @@ namespace CLUB_VALERO_DB.Entities
         public byte[] Data { get; set; }
         [NotMapped]
         public HttpPostedFileBase postedFile { get; set; }
+        
 
     }
 

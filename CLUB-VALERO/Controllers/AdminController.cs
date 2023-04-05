@@ -691,7 +691,30 @@ namespace CLUB_VALERO.Controllers
             var result = obj.bookings.FirstOrDefault(x => x.Id == id);
             return View(result);
         }
-        
+        [HttpPost]
+        public ActionResult EditHotelBooking(Booking model)
+        {
+            try
+            {
+                ViewBag.MemberShip = new SelectList(obj.Members, "Id", "MemberShipId").ToList();
+                bool isvalid = Adbll.UpdateBooking(model);
+                if (isvalid)
+                {
+                    TempData["Remark Add"] = "Booking  Update SuccessFully";
+                    return RedirectToAction("Bookmember");
+                }
+                else
+                {
+                    TempData["Remark Add"] = "Booking Update Not SuccessFully";
+                    return RedirectToAction("Bookmember");
+                }
+            }
+            catch
+            {
+                throw new Exception("Server Error");
+            }
+        }
+
 
         public ActionResult ContactusMessage()
         {

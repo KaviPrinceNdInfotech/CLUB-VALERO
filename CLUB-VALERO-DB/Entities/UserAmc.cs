@@ -17,9 +17,11 @@ namespace CLUB_VALERO_DB.Entities
         public DateTime AmcStartDate { get; set; }
         public int UserId { get; set; }
         public DateTime AmcDepositDate { get; set; }
-
+        
         public string PaymentMode { get; set; }
 
         public IEnumerable<Member> Servicelist { get; set; }
+        public string remarks { get; set; }
+
     }
 }

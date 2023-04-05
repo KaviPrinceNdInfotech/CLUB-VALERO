@@ -38,7 +38,7 @@
     <table class="table text-white table-striped table-bordered table-responsive table-hover mt-4" style="background-color: darkcyan;">
         <tr>
             <th>
-               
+
                 <label>Membership Id</label> <br />
                 <label>Prefix</label> <br />
                 <label>FirstName</label><br />
@@ -52,10 +52,10 @@
                 <label>MaritalStatus</label><br />
             </th>
             @*<th>
-                <label>Occupation</label> <br />
-                <label>AnnualIncome</label><br />
-                <label>FoodPreference</label><br />
-            </th>*@
+            <label>Occupation</label> <br />
+            <label>AnnualIncome</label><br />
+            <label>FoodPreference</label><br />
+        </th>*@
             <th>
                 <label>Permission/Building</label> <br />
                 <label>Road/Lane</label><br />
@@ -77,10 +77,14 @@
             </th>
             <th>
 
+                <label>Tenure</label>
+            </th>
+            <th>
+
                 @*<label>MemberShipType</label><br />
-                <label>ClubValeroMemebr</label><br />
-                <label> MemberShipNo</label>
-                <br />*@
+            <label>ClubValeroMemebr</label><br />
+            <label> MemberShipNo</label>
+            <br />*@
                 <label>Pdf Download</label>
             </th>
 
@@ -91,10 +95,10 @@
             {
             
                 <tr>
-                    <td> 
-                      
-                      <a href="/Admin/Profile?id=@item.Id"><span class="badge badge-warning">@item.MemberShipId</span></a> <br />
-                      <br />  <span>@item.M_Salution</span> <br />
+                    <td>
+
+                        <a href="/Admin/Profile?id=@item.Id"><span class="badge badge-warning">@item.MemberShipId</span></a> <br />
+                        <br />  <span>@item.M_Salution</span> <br />
                         <span>@item.M_FirstName</span><br />
 
                         <span>@item.M_LastName</span><br />
@@ -106,11 +110,11 @@
                         <span>@item.MaritalStatus</span><br />
                     </td>
                     @*<td>
-                        <span>@item.Occupation</span> <br />
-                        <span>@item.AnnualIncome</span><br />
-                        <span>@item.FoodPreference</span><br />
+            <span>@item.Occupation</span> <br />
+            <span>@item.AnnualIncome</span><br />
+            <span>@item.FoodPreference</span><br />
 
-                    </td>*@
+        </td>*@
                     <td>
                         <span>@item.NameOfPremission_Building</span> <br />
                         <span>@item.Road_Street_Lane</span><br />
@@ -130,10 +134,13 @@
                         <span>@item.NoOf_Night_Year</span>
                     </td>
                     <td>
+                        <span>@item.Tenure</span>
+                    </td>
+                    <td>
 
                         @*<span>@item.MemberShipType</span><br />
-                        <span>@item.ClubValeroMemebr</span><br />
-                        <span>@item.MemberShipNo</span> <br />*@
+            <span>@item.ClubValeroMemebr</span><br />
+            <span>@item.MemberShipNo</span> <br />*@
 
                         <a href="/Admin/ListRemark?id=@item.Id" class="text-warning h4">Click Remark</a> <br />
                         @if (item.FileName == null)
@@ -159,8 +166,8 @@
                                 <a href="@Url.Action("WelcomeMail","Admin",new { Id=item.Id})" onclick="return confirm('Are you sure Send WelCome Email?')" data-toggle="tooltip" data-placement="top" title="WELCOME EMAIL"><i class="fa fa-envelope  text-white" style=" font-size: 27px;"></i></a><br />
                                 <a href="@Url.Action("PdfUpload","Admin",new { Id=item.Id})" onclick="return confirm('Are you sure Pdf Upload?')" data-toggle="tooltip" data-placement="top" title="PDF UPLOAD"><i class="fa fa-file-pdf-o  text-white" style=" font-size: 27px;"></i></a><br />
                                 <a href="@Url.Action("AddRemark","Admin",new { Id=item.Id})" onclick="return confirm('Are Sure Add Remark?')" data-toggle="tooltip" data-placement="top" title="Add Remark"><i class="fa fa-pencil text-danger" style=" font-size: 27px;"></i></a><br />
-                                                                       
-                                <a href = "@Url.Action("UpdateAmc","Admin",new { Id=item.Id})" onclick = "return confirm('Are Sure Update Amc?')" data - toggle = "tooltip" data-placement = "top" title = "Update Amc" ><i class="fa fa-pencil text-warning" style=" font-size: 27px;"></i></a><br />
+
+                                <a href="@Url.Action("UpdateAmc","Admin",new { Id=item.Id})" onclick="return confirm('Are Sure Update Amc?')" data - toggle="tooltip" data-placement="top" title="Update Amc"><i class="fa fa-pencil text-warning" style=" font-size: 27px;"></i></a><br />
 
 
 
